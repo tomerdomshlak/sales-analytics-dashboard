@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-export const H4 = styled.h4`
+export const Tiny = styled.div`
   font-weight: 500;
-  font-size: 14px;
-  line-height: 21px;
+  font-size: 10px;
+  line-height: 15px;
 `;

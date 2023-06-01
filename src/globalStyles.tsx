@@ -1,6 +1,10 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import { createGlobalStyle } from "styled-components";
 
-export const globalStyles = styled.div`
-  
-`
+export const GlobalStyles = createGlobalStyle`
+  * {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    color: #FFFFFF;
+  }
+`;
