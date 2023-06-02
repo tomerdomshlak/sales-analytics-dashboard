@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import LeftContainer from "./LeftContainer";
 import RightContainer from "./RightContainer";
-import HorizontalFlex from "../components/flex_layouts/HorizontalFlex";
 
 const DashboardContent = ({ ...props }) => {
   return (

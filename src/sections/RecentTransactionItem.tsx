@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Gap8HorizontalFlex from "../components/flex_layouts/Gap8HorizontalFlex";
 import HorizontalFlex from "../components/flex_layouts/HorizontalFlex";
 import VerticalFlex from "../components/flex_layouts/VerticalFlex";
 import { H3 } from "../components/typography/H3";

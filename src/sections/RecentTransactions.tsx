@@ -2,10 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import VerticalFlex from "../components/flex_layouts/VerticalFlex";
 import { H2 } from "../components/typography/H2";
-import { inspect } from "util";
 import { colors } from "../components/theme/colors";
 import Gap8VerticalFlex from "../components/flex_layouts/Gap8VerticalFlex";
-import Gap8HorizontalFlex from "../components/flex_layouts/Gap8HorizontalFlex";
 import { H4 } from "../components/typography/H4";
 import RecentTransactionItem from "./RecentTransactionItem";
 
