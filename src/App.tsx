@@ -6,10 +6,10 @@ import Dashboard from "./sections/Dashboard";
 
 function App() {
   return (
-    <>
+    <div className="app-container">
       <GlobalStyles />
       <Dashboard />
-    </>
+    </div>
   );
 }
 

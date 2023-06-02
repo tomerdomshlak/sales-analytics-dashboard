@@ -1,12 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import Gap16HorizontalFlex from "../flex_layouts/Gap16HorizontalFlex";
-import { H4 } from "../typography/H4";
 
 const SearchBar1 = ({ ...props }) => {
   return (
     <LayoutRoot {...props}>
-      <img src="/glass.svg" />
+      <img src="/glass.svg" alt="Glass" />
       <Field placeholder="Search"></Field>
     </LayoutRoot>
   );

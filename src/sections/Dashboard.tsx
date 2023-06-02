@@ -17,7 +17,6 @@ export default Dashboard;
 
 const LayoutRoot = styled.div`
   background: ${colors.background_1};
-  height: 100vh;
   display: grid;
   grid-template-columns: auto 1fr;
 `;

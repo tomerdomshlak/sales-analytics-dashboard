@@ -4,11 +4,57 @@ import Gap8VerticalFlex from "../components/flex_layouts/Gap8VerticalFlex";
 import { IconButton } from "@mui/material";
 import MenuItem1 from "../components/buttons/MenuItem1";
 import Gap16VerticalFlex from "../components/flex_layouts/Gap16VerticalFlex";
-import { items } from "./SideMenu.data";
+import DashboardIcon from "../svg2jsx/DashboardIcon";
+import HomeIcon from "../svg2jsx/HomeIcon";
+import ReportsIcon from "../svg2jsx/ReportsIcon";
+import OrdersIcon from "../svg2jsx/OrdersIcon";
+import MenuIcon from "../svg2jsx/MenuIcon";
+import CustomersIcon from "../svg2jsx/CustomersIcon";
+import SettingsIcon from "../svg2jsx/SettingsIcon";
+import { colors } from "../components/theme/colors";
+import VerticalFlex from "../components/flex_layouts/VerticalFlex";
 
 const SideMenu = ({ ...props }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [hoverIndex, setHoverIndex] = useState<number | undefined>();
+
+  const getMenuItemColor = (index: number) => {
+    return selectedIndex === index || hoverIndex === index
+      ? colors.white
+      : colors.blue_1;
+  };
+
+  const items = [
+    {
+      icon: <DashboardIcon fill={getMenuItemColor(0)} />,
+      text: "Dashboard",
+    },
+    {
+      icon: <HomeIcon fill={getMenuItemColor(1)} />,
+      text: "Home",
+    },
+    {
+      icon: <ReportsIcon fill={getMenuItemColor(2)} />,
+      text: "Reports",
+    },
+    {
+      icon: <OrdersIcon fill={getMenuItemColor(3)} />,
+      text: "Orders",
+    },
+    {
+      icon: <MenuIcon fill={getMenuItemColor(4)} />,
+      text: "Menu",
+    },
+    {
+      icon: <CustomersIcon fill={getMenuItemColor(5)} />,
+      text: "Customers",
+    },
+    {
+      icon: <SettingsIcon fill={getMenuItemColor(6)} />,
+      text: "Settings",
+    },
+  ];
 
   const handleHamburgerClick = () => {
     setIsOpen(!isOpen);
@@ -28,9 +74,12 @@ const SideMenu = ({ ...props }) => {
           {items.map((item, index) => (
             <MenuItem1
               key={item.text}
+              index={index}
               text={isOpen ? item.text : ""}
               isSelected={selectedIndex === index}
-              iconSrc={item.iconSrc}
+              hoverIndex={hoverIndex}
+              setHoverIndex={setHoverIndex}
+              icon={item.icon}
               onClick={() => handleMenuItemClick(index)}
             />
           ))}
@@ -65,4 +114,4 @@ const StyledIconButton = styled(IconButton)`
   margin-left: 22px !important;
 `;
 
-const MenuItemsContainer = styled(Gap16VerticalFlex)``;
+const MenuItemsContainer = styled(VerticalFlex)``;

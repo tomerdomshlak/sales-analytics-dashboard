@@ -1,18 +1,23 @@
 import React from "react";
 import styled from "styled-components";
-import Gap8VerticalFlex from "../components/flex_layouts/Gap8VerticalFlex";
-import SearchBar1 from "../components/search/SearchBar1";
+import LeftContainer from "./LeftContainer";
+import RightContainer from "./RightContainer";
+import HorizontalFlex from "../components/flex_layouts/HorizontalFlex";
 
 const DashboardContent = ({ ...props }) => {
   return (
     <LayoutRoot {...props}>
-      <SearchBar1 />
+      <LeftContainer />
+      <RightContainer />
     </LayoutRoot>
   );
 };
 
 export default DashboardContent;
 
-const LayoutRoot = styled(Gap8VerticalFlex)`
+const LayoutRoot = styled.div`
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 32px;
   padding: 35px 40px;
 `;

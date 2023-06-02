@@ -1,15 +1,28 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled, { css } from "styled-components";
 import Gap16HorizontalFlex from "../flex_layouts/Gap16HorizontalFlex";
+import { colors } from "../theme/colors";
 
 type Props = {
   onClick?: Function;
-  iconSrc: string;
+  setHoverIndex?: Function;
+  index: number;
+  hoverIndex?: number;
+  icon: any;
   text: string;
   isSelected?: boolean;
 };
 
-const MenuItem1 = ({ iconSrc, text, isSelected, onClick, ...props }: Props) => {
+const MenuItem1 = ({
+  icon,
+  text,
+  index,
+  hoverIndex,
+  setHoverIndex,
+  isSelected,
+  onClick,
+  ...props
+}: Props) => {
   const [isTextVisible, setIsTextVisible] = useState(false);
   const timerRef: { current: NodeJS.Timeout | null } = useRef(null);
 
@@ -24,9 +37,19 @@ const MenuItem1 = ({ iconSrc, text, isSelected, onClick, ...props }: Props) => {
   }, [text]);
 
   return (
-    <LayoutRoot isSelected={isSelected} onClick={onClick} {...props}>
-      <Image src={iconSrc} alt={text} />
-      {isTextVisible && <Text>{text}</Text>}
+    <LayoutRoot
+      isSelected={isSelected}
+      onClick={onClick}
+      onMouseEnter={() => setHoverIndex?.(index)}
+      onMouseLeave={() => setHoverIndex?.(null)}
+      {...props}
+    >
+      <IconContainer>{icon}</IconContainer>
+      {isTextVisible && (
+        <Text isSelected={isSelected!} isHover={hoverIndex === index}>
+          {text}
+        </Text>
+      )}
     </LayoutRoot>
   );
 };
@@ -51,12 +74,13 @@ const LayoutRoot = styled(Gap16HorizontalFlex)`
     `}
 `;
 
-const Image = styled.img`
-  && > path {
-    stroke: red;
-  }
+const IconContainer = styled.div`
+  display: flex;
+  justify-content: center;
 `;
 
-const Text = styled.div`
+const Text = styled.div<{ isSelected: boolean; isHover: boolean }>`
   word-break: break-all;
+  color: ${({ isSelected, isHover }) =>
+    isSelected || isHover ? colors.white : colors.blue_1};
 `;
