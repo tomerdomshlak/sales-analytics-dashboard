@@ -27,9 +27,8 @@ const LayoutRoot = styled(HorizontalFlex)`
 
   :hover {
     border: 1.5px solid white;
-    opacity: 0.8;
   }
-  :hover > h3 {
+  :hover > * {
     color: white;
   }
 `;
