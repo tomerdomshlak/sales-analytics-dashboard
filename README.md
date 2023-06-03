@@ -3,7 +3,7 @@
 This project is a simple showcase of a Figma design (Sales Analytics Dashboard by Redlio Designs) front-end implementation.
 No backend - data fully mocked.
 
-## Dependencies
+### Dependencies
 
 React.js
 
@@ -15,7 +15,7 @@ styled-components
 
 prettier
 
-## Credits
+### Credits
 
 https://designresources.io/sales-analytics-dashboard-ui/
 
