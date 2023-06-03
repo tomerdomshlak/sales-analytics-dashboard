@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import styled, { css } from "styled-components";
 import Gap16HorizontalFlex from "../flex_layouts/Gap16HorizontalFlex";
 import { colors } from "../theme/colors";
@@ -23,19 +23,6 @@ const MenuItem1 = ({
   onClick,
   ...props
 }: Props) => {
-  const [isTextVisible, setIsTextVisible] = useState(false);
-  const timerRef: { current: NodeJS.Timeout | null } = useRef(null);
-
-  useEffect(() => {
-    clearTimeout(timerRef.current as NodeJS.Timeout);
-
-    if (text) {
-      timerRef.current = setTimeout(() => setIsTextVisible(true), 300);
-    } else {
-      setIsTextVisible(false);
-    }
-  }, [text]);
-
   return (
     <LayoutRoot
       isSelected={isSelected}
@@ -45,11 +32,9 @@ const MenuItem1 = ({
       {...props}
     >
       <IconContainer>{icon}</IconContainer>
-      {isTextVisible && (
-        <Text isSelected={isSelected!} isHover={hoverIndex === index}>
-          {text}
-        </Text>
-      )}
+      <Text isSelected={isSelected!} isHover={hoverIndex === index}>
+        {text}
+      </Text>
     </LayoutRoot>
   );
 };

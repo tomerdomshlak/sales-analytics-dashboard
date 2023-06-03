@@ -15,7 +15,7 @@ import { colors } from "../components/theme/colors";
 import VerticalFlex from "../components/flex_layouts/VerticalFlex";
 
 const SideMenu = ({ ...props }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [hoverIndex, setHoverIndex] = useState<number | undefined>();
 

@@ -23,7 +23,6 @@ export default LeftContainer;
 
 const LayoutRoot = styled(VerticalFlex)`
   gap: 20px;
-  padding: 35px 40px;
   width: fit-content;
   max-width: 717px;
 `;
