@@ -6,6 +6,7 @@ It's not connected to a server, and the data is fully mocked.
 ## Dependencies
 
 React.js
+
 TypeScript
 Material-UI
 styled-components
