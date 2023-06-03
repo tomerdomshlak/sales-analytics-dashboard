@@ -1,7 +1,7 @@
-# Figma Design Implementation In React.js
+# Sales Analytics Dashboard - Figma Design Implementation
 
-This project is showcases a random Figma design front-end implementation.
-It's not connected to a server, and the data is fully mocked.
+This project is a simple showcase of a Figma design (Sales Analytics Dashboard by Redlio Designs) front-end implementation.
+No backend - data fully mocked.
 
 ## Dependencies
 
@@ -14,3 +14,8 @@ Material-UI
 styled-components
 
 prettier
+
+## Credits
+
+https://designresources.io/sales-analytics-dashboard-ui/
+https://dribbble.com/RedlioDesigns
