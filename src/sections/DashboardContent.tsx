@@ -19,4 +19,5 @@ const LayoutRoot = styled.div`
   grid-template-columns: auto 1fr;
   gap: 32px;
   padding: 35px 40px;
+  background-color: #0b1e51;
 `;
