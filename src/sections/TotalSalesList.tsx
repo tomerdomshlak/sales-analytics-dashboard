@@ -28,8 +28,9 @@ const TotalSalesList = ({ ...props }) => {
   ];
   return (
     <LayoutRoot {...props}>
-      {items.map(({ icon, value, increaseLevel, dotColor }) => (
+      {items.map(({ icon, value, increaseLevel, dotColor }, index) => (
         <TotalSalesItem
+          key={index}
           icon={icon}
           value={value}
           increaseLevel={increaseLevel}

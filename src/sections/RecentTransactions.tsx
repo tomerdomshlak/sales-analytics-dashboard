@@ -44,6 +44,7 @@ const RecentTransactions = ({ ...props }) => {
           <TableItems>
             {items.map((item) => (
               <RecentTransactionItem
+                key={item.companyName}
                 iconSrc={item.iconSrc}
                 companyName={item.companyName}
                 country={item.country}

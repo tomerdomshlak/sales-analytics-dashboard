@@ -13,8 +13,10 @@ import CustomersIcon from "../svg2jsx/CustomersIcon";
 import SettingsIcon from "../svg2jsx/SettingsIcon";
 import { colors } from "../components/theme/colors";
 import VerticalFlex from "../components/flex_layouts/VerticalFlex";
+import { useAppContext } from "../AppContext";
 
 const SideMenu = ({ ...props }) => {
+  const { showGeneralSnackbarMessage } = useAppContext();
   const [isOpen, setIsOpen] = useState(true);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [hoverIndex, setHoverIndex] = useState<number | undefined>();
@@ -61,6 +63,7 @@ const SideMenu = ({ ...props }) => {
   };
 
   const handleMenuItemClick = (index: number) => {
+    showGeneralSnackbarMessage?.();
     setSelectedIndex(index);
   };
 

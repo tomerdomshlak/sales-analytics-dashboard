@@ -8,6 +8,7 @@ import { H5 } from "../components/typography/H5";
 import HorizontalFlex from "../components/flex_layouts/HorizontalFlex";
 import { IconButton } from "@mui/material";
 import Gap16HorizontalFlex from "../components/flex_layouts/Gap16HorizontalFlex";
+import { useAppContext } from "../AppContext";
 
 type Props = {
   icon: any;
@@ -17,11 +18,13 @@ type Props = {
 };
 
 const TotalSalesItem = ({ icon, value, increaseLevel, dotColor }: Props) => {
+  const { showGeneralSnackbarMessage } = useAppContext();
+
   return (
     <LayoutRoot>
       <Header>
         {icon}
-        <IconButton>
+        <IconButton onClick={() => showGeneralSnackbarMessage?.()}>
           <img src="/arrow-right.svg" alt="Arrow Right" />
         </IconButton>
       </Header>

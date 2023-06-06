@@ -8,8 +8,11 @@ import Gap8HorizontalFlex from "../components/flex_layouts/Gap8HorizontalFlex";
 import { IconButton } from "@mui/material";
 import HorizontalFlex from "../components/flex_layouts/HorizontalFlex";
 import DataAnalysisItem from "./DataAnalysisItem";
+import { useAppContext } from "../AppContext";
 
 const DataAnalysis = ({ ...props }) => {
+  const { showGeneralSnackbarMessage } = useAppContext();
+
   const items = [
     {
       barHeight: 163,
@@ -35,13 +38,18 @@ const DataAnalysis = ({ ...props }) => {
           <H4>Data Analysis</H4>
           <LastWeekText>Last Week</LastWeekText>
         </TitleContainer>
-        <FalafelIconButton>
+        <FalafelIconButton onClick={() => showGeneralSnackbarMessage?.()}>
           <img src="/falafel.svg" alt="Falafel Menu" />
         </FalafelIconButton>
       </Header>
       <Items>
         {items.map(({ barHeight, amount, type }) => (
-          <DataAnalysisItem barHeight={barHeight} amount={amount} type={type} />
+          <DataAnalysisItem
+            key={type}
+            barHeight={barHeight}
+            amount={amount}
+            type={type}
+          />
         ))}
       </Items>
     </LayoutRoot>

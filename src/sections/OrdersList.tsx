@@ -47,6 +47,7 @@ const OrdersList = ({ ...props }) => {
       <TableItems>
         {items.map(({ imageSrc, name, backgroundColor, timeAgo, amount }) => (
           <OrderItem
+            key={name}
             imageSrc={imageSrc}
             backgroundColor={backgroundColor}
             timeAgo={timeAgo}

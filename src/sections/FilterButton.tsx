@@ -3,10 +3,17 @@ import styled from "styled-components";
 import HorizontalFlex from "../components/flex_layouts/HorizontalFlex";
 import { H4 } from "../components/typography/H4";
 import { colors } from "../components/theme/colors";
+import { useAppContext } from "../AppContext";
 
 const FilterButton = ({ ...props }) => {
+  const { showGeneralSnackbarMessage } = useAppContext();
+
+  const handleClick = () => {
+    showGeneralSnackbarMessage?.();
+  };
+
   return (
-    <LayoutRoot {...props}>
+    <LayoutRoot onClick={handleClick} {...props}>
       <StyledH3>Filter</StyledH3>
       <img src="/filter.svg" alt="Filter" />
     </LayoutRoot>

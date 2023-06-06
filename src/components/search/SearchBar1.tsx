@@ -1,11 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import Gap16HorizontalFlex from "../flex_layouts/Gap16HorizontalFlex";
+import { IconButton } from "@mui/material";
+import Gap8HorizontalFlex from "../flex_layouts/Gap8HorizontalFlex";
+import { useAppContext } from "../../AppContext";
 
 const SearchBar1 = ({ ...props }) => {
+  const { showGeneralSnackbarMessage } = useAppContext();
+
   return (
     <LayoutRoot {...props}>
-      <img src="/glass.svg" alt="Glass" />
+      <StyledIconButton onClick={() => showGeneralSnackbarMessage?.()}>
+        <img src="/glass.svg" alt="Glass" />
+      </StyledIconButton>
       <Field placeholder="Search"></Field>
     </LayoutRoot>
   );
@@ -13,8 +19,8 @@ const SearchBar1 = ({ ...props }) => {
 
 export default SearchBar1;
 
-const LayoutRoot = styled(Gap16HorizontalFlex)`
-  padding: 15px 21px;
+const LayoutRoot = styled(Gap8HorizontalFlex)`
+  padding: 4px 10px;
   max-width: 270px;
   background: linear-gradient(134.81deg, #152e5f -14.32%, #0b1e51 90.64%);
   border-radius: 29px;
@@ -34,5 +40,11 @@ const Field = styled.input`
     font-size: 14px;
     line-height: 21px;
     color: #667cb1;
+  }
+`;
+
+const StyledIconButton = styled(IconButton)`
+  && {
+    padding: 11px;
   }
 `;
